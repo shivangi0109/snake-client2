@@ -14,7 +14,10 @@ const connect = function () {
   // Event handler for when the connection is established
   // connect is a specific event that happens when a successful connection is made
   conn.on("connect", () => {
-    console.log("Connected to the server");
+    console.log("Successfully connected to game server");
+
+    // Send the name to the server
+    conn.write("Name: SSR"); // Replace SNK with your three-letter initials
   });
 
   // Handle Messages From Server
