@@ -17,7 +17,7 @@ const connect = function () {
     console.log("Successfully connected to game server");
 
     // Send the name to the server
-    conn.write("Name: SSR"); // Replace SNK with your three-letter initials
+    conn.write("Name: SHI"); // Replace SNK with your three-letter initials
   });
 
   // Handle Messages From Server
@@ -26,6 +26,34 @@ const connect = function () {
   conn.on("data", (data) => {
     console.log("Server says:", data);
   });
+
+  // conn.on("connect", () => {
+  //   // Send the string "Move: up" as data to the server
+  //   // sendMoves();
+  //   // startMovingUp();
+  // });
+
+  // Function to send multiple "Move: up" commands with a delay
+  // function sendMoves() {
+  //   setTimeout(() => {
+  //     conn.write("Move: up");
+  //     setTimeout(() => {
+  //       conn.write("Move: up");
+  //       setTimeout(() => {
+  //         conn.write("Move: up");
+  //       }, 1000);
+  //     }, 1000);
+  //   }, 1000);
+  // }
+
+  // Function to start moving the snake up every 50ms
+  // function startMovingUp() {
+  //   const moveUp = setInterval(() => {
+  //     conn.write("Move: up");
+  //   }, 10000);
+
+  //   clearInterval(moveUp);
+  // }
 
   return conn;
 };
