@@ -1,3 +1,5 @@
+const { MOVEMENT_COMMANDS } = require("./constants");
+
 // Stores the active TCP connection object.
 let connection;
 
@@ -20,16 +22,20 @@ const handleUserInput = function(key) {
     process.exit();
   } else if (key === 'w') {
     console.log("Move: up"); // Log the keypress
-    connection.write("Move: up"); // Use the connection object to send the movement command.
+    // connection.write("Move: up"); // Use the connection object to send the movement command.
+    connection.write(MOVEMENT_COMMANDS.UP); // Use the movement command from the MOVEMENT_COMMANDS constant.
   } else if (key === 'a') {
     console.log("Move: left"); // Log the keypress
-    connection.write("Move: left");
+    // connection.write("Move: left");
+    connection.write(MOVEMENT_COMMANDS.LEFT); // Use the movement command from the MOVEMENT_COMMANDS constant.
   } else if (key === 's') {
     console.log("Move: down"); // Log the keypress
-    connection.write("Move: down");
+    // connection.write("Move: down");
+    connection.write(MOVEMENT_COMMANDS.DOWN); // Use the movement command from the MOVEMENT_COMMANDS constant.
   } else if (key === 'd') {
     console.log("Move: right"); // Log the keypress
-    connection.write("Move: right");
+    // connection.write("Move: right");
+    connection.write(MOVEMENT_COMMANDS.RIGHT); // Use the movement command from the MOVEMENT_COMMANDS constant.
   } else if (key === 'q') {
     connection.write("Say: Hello!"); // Send a canned message to the server
   } else if (key === 'e') {
