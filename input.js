@@ -30,6 +30,12 @@ const handleUserInput = function(key) {
   } else if (key === 'd') {
     console.log("Move: right"); // Log the keypress
     connection.write("Move: right");
+  } else if (key === 'q') {
+    connection.write("Say: Hello!"); // Send a canned message to the server
+  } else if (key === 'e') {
+    connection.write("Say: I'm having fun!");
+  } else if (key === 'r') {
+    connection.write("Say: Good Bye!");
   }
 };
 
